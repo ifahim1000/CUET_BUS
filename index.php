@@ -194,6 +194,7 @@ t_navbar();
 	</td>
 </tr>
 </table>
+
 <?php
 t_footer();
 ?>

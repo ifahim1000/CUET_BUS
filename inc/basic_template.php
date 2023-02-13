@@ -87,7 +87,7 @@ function t_footer() {
 </div>
 <div class="footer">
 	<div class="row p-4">
-		<div class="col-md-4">BTBS, owned and operated by Uradhura Limited, is a premium online and on-demand service provider committed to make your life convenient, easier and smarter.<br/>© 2015-2019 BTBS · All Rights Reserved</div>
+		<div class="col-md-4">The CUET Bus Seat Reservation System is a convenient and efficient way for students of the Chittagong University of Engineering and Technology (CUET) to reserve and manage their bus seat assignments.All Rights Reserved</div>
 		<div class="col-md-4 text-center">
 		<ul class="list-null">
             <li><a href="#">About Us</a></li>

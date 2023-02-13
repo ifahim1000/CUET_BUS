@@ -163,3 +163,9 @@ body {
   left: calc(50% - 60px);
   top: calc(50% - 60px);
 }
+button {
+  margin-right: 30px;
+}
+img {
+  width: 85%;
+}
