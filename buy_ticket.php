@@ -19,7 +19,7 @@ if (isset($_POST['buy'])) {
     $sql .= $_POST['fare']."')";
 
     if ($conn->query($sql)) {
-      echo '<div class="alert alert-success">Purchase <strong>Success</strong>full!<a class="text-right" href="./print.php?ticket='.$conn->insert_id.'"><button class="btn btn-info">Print</button></a></div>';
+      echo '<div class="alert alert-success">Booked <strong>Success</strong>full!<a class="text-right" href="./print.php?ticket='.$conn->insert_id.'"><button class="btn btn-info">Print</button></a></div>';
     }
     else {
       echo '<div class="alert alert-danger"><strong>Error: </strong>'.$conn->error.'</div>';
@@ -60,19 +60,10 @@ if (isset($_POST['buy'])) {
   <div class="form-group row">
     <label for="jdate" class="col-sm-2 col-form-label">Journey Date</label>
     <div class="col-sm-7 input-group">
-      <input name="jdate" class="form-control" id="inputJDate" type="text" value="<?php echo (isset($_GET['jdate'])) ? $_GET['jdate'] : ''; ?>"/>
+      <input name="jdate" class="form-control" id="inputJDate" type="text" value="<?php echo date("Y/m/d"); ?> " readonly>
     </div>
   </div>
-  <script src="./js/bootstrap-datepicker.min.js"></script>
-  <script>
-    $('#inputJDate').datepicker({
-      format: "dd/mm/yyyy",
-      weekStart: 6,
-      startDate: "today",
-      autoclose: true,
-      todayHighlight: true
-    });
-  </script>
+  
   <div class="form-group row">
     <div class="col-sm-2"></div>
     <div class="col-sm-7">
@@ -84,11 +75,10 @@ if (isset($_POST['buy'])) {
 <div class="loader text-center" id="wait"><img src="./img/bus-loader.gif" alt="Wait..."/></div>
 <div class="table-con">
 <div class="row">
-  <div class="col-sm-2">Sl.</div>
-  <div class="col-sm-4">Bus Name</div>
-  <div class="col-sm-2">Dip. Time</div>
-  <div class="col-sm-2">Arr. Time</div>
-  <div class="col-sm-2">Fare (৳)</div>
+  <div class="col-sm-3">Sl.</div>
+  <div class="col-sm-3">Bus Name</div>
+  <div class="col-sm-3">Dip. Time</div>
+  <div class="col-sm-3">Arr. Time</div>
 </div>
 <?php
 require_once 'inc/database.php';
@@ -105,11 +95,11 @@ else {
   while ($row = $res->fetch_assoc()) {
     echo '
     <div class="row content">
-      <div class="col-sm-2">'.$row['id'].'</div>
-      <div class="col-sm-4">'.$row['bname'].'</div>
-      <div class="col-sm-2">'.$row['from_time'].'</div>
-      <div class="col-sm-2">'.$row['to_time'].'</div>
-      <div class="col-sm-2">'.$row['fare'].'</div>
+      <div class="col-sm-3">'.$row['id'].'</div>
+      <div class="col-sm-3">'.$row['bname'].'</div>
+      <div class="col-sm-3">'.$row['from_time'].'</div>
+      <div class="col-sm-3">'.$row['to_time'].'</div>
+     
     </div>
     ';
   }

@@ -21,8 +21,7 @@ t_sidebar();
     <div class="col-md-2">Dep. Time</div>
     <div class="col-md-2">Arr. Time</div>
     <div class="col-md-1">J. Date</div>
-    <div class="col-md-1">Fare (৳)</div>
-    <div class="col-md-1">Seats</div>
+    <div class="col-md-2 text-center">Seats</div>
 </div>
 <?php
 require_once 'inc/database.php';
@@ -47,8 +46,7 @@ else {
             <div class="col-md-2">' . $row["from_time"] . '</div>
             <div class="col-md-2">' . $row["to_time"] . '</div>
             <div class="col-md-1">' . $row["jdate"] . '</div>
-            <div class="col-md-1">' . $row["fare"] . '</div>
-            <div class="col-md-1">'.count(unserialize($row["seats"])).'</div>
+            <div class="col-md-2 text-center">'.count(unserialize($row["seats"])).'</div>
         </div>';
     }
 }

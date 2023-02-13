@@ -16,7 +16,7 @@ t_admin_sidebar();
     <h4 class="col-md-3">Users</h4>
     <div class="col-md-8 text-right ml-4">
     <form method="post" action="">
-    	<input type="text" name="user" class="form-control-sm" value="<?php echo (isset($_POST['user'])) ? $_POST['user'] : ""; ?>">
+    	<input type="text" name="user" class="form-control-sm" placeholder="name or username" value="<?php echo (isset($_POST['user'])) ? $_POST['user'] : ""; ?>">
         <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-search"></i> Search</button>
     </form>
     </div>
