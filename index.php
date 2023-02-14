@@ -107,7 +107,6 @@ t_navbar();
 	      <label class="col-form-legend col-sm-2" for="utype">User Type</label>
 	      <div class="col-sm-7 px-5">
 	        <input class="form-check-input" type="radio" name="utype" id="radioPass" value="3" checked> Passenger <br/>
-            <input class="form-check-input" type="radio" name="utype" id="radioBO" value="2"> Bus Owner
 	      </div>
 	    </div>
 	    <div class="form-group row">

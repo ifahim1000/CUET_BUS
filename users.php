@@ -26,11 +26,10 @@ t_admin_sidebar();
     <div class="col-md-1">ID</div>
     <div class="col-md-1">UserName</div>
     <div class="col-md-2">Name</div>
-    <div class="col-md-2">Email</div>
+    <div class="col-md-4">Email</div>
     <div class="col-md-1">Gender</div>
     <div class="col-md-1">Type</div>
-    <div class="col-md-2">Address</div>
-    <div class="col-md-2">Mobile</div>
+    <div class="col-md-1">Mobile</div>
 </div>
 <?php
 require_once 'inc/database.php';
@@ -50,14 +49,13 @@ else {
     while ($row = $res->fetch_assoc()) {
         echo '
         <div class="content row">
-            <div class="col-md-1">' . $row["id"] . '</div>
-            <div class="col-md-1">' . $row["uname"] . '</div>
-            <div class="col-md-2">' . $row["name"] . '</div>
-            <div class="col-md-2">' . $row["email"] . '</div>
-            <div class="col-md-1">' . $row["gender"] . '</div>
-            <div class="col-md-1">' . $row["utype"] . '</div>
-            <div class="col-md-2">' . $row["address"] . '</div>
-            <div class="col-md-2">0' . $row["mobile"] . '</div>
+            <div class="col-md-1 text-left">' . $row["id"] . '</div>
+            <div class="col-md-1 text-left">' . $row["uname"] . '</div>
+            <div class="col-md-2 text-left">' . $row["name"] . '</div>
+            <div class="col-md-4 text-left">' . $row["email"] . '</div>
+            <div class="col-md-1 text-left">' . $row["gender"] . '</div>
+            <div class="col-md-1 text-left">' . $row["utype"] . '</div>
+            <div class="col-md-1 text-left">0' . $row["mobile"] . '</div>
         </div>';
     }
 }

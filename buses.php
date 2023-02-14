@@ -22,8 +22,17 @@ if (isset($_POST['addbus'])) {
     $conn = initDB();
     $sql = "insert into buses (bname, bus_no, owner_id, from_loc, from_time, to_loc,to_time,fare,approved) values ('";
     $sql .= $_POST['bname'] . "','" . $_POST['bus_no'] . "','" . $_POST['owner_id'] . "','" . $_POST['from_loc'] . "','";
-    $sql .= $_POST['from_time'] . "','" . $_POST['to_loc'] . "','" . $_POST['to_time'] . "','00','0')";
+    $sql .= $_POST['from_time'] . "','" . $_POST['to_loc'] . "','" . $_POST['to_time'] . "','00','1')";
+
+    $place1= $_POST['from_loc'];
+    $sql1= "insert into locations (name) values('$place1')";
+    $place2= $_POST['to_loc'];
+    $sql2= "insert into locations (name) values('$place2')";
+
+
     if ($conn->query($sql)) {
+        $conn->query($sql1);
+        $conn->query($sql2);
         echo '<script>alert("OK");</script>';
     } else {
         echo '<script>alert("Fail");</script>';
@@ -35,14 +44,14 @@ if(isset($_POST['dltbus'])) {
     require_once 'inc/database.php';
     $conn = initDB();
     $busno= $_POST['bus_no'];
-    $sql =" delete from buses where buses.bus_no= '$busno' ";
+    $sql =" delete from buses where (buses.bus_no= '$busno') ";
     if($conn->query($sql))
     {
         echo '<script>alert("Successfully deleted");</script>';
     }
     else
     {
-        echo '<script>alert("OK");</script>';
+        echo '<script>alert("Unsuccessfull to delete");</script>';
     }
 
 }

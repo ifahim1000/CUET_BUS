@@ -46,9 +46,9 @@ CREATE TABLE `buses` (
 --
 
 INSERT INTO `buses` (`id`, `bname`, `bus_no`, `owner_id`, `from_loc`, `from_time`, `to_loc`, `to_time`, `fare`, `approved`) VALUES
-(1, 'Hanif', 'NM-12456', 3, 'Naogaon', '10:30 PM', 'Dhaka', '05:00 AM', 500, 1),
-(2, 'Hanif', 'NM-12456', 3, 'Dhaka', '09:45 PM', 'Naogaon', '04:15 AM', 500, 0),
-(4, 'Himachal', 'BD-123456', 3, 'Dhaka', '10:30 AM', 'Rajshahi', '4:30 PM', 700, 0);
+(1, 'Padma', 'CUET-12456', 1, 'CUET', '10:30 PM', 'Kaptai Rastar Matha', '05:00 AM', 00, 1),
+(2, 'Meghna', 'CUET-12456', 1, 'Pahartoli', '09:45 PM', 'Raogaon', '04:15 AM', 00, 0),
+(4, 'Jamuna', 'CUET-123456', 1, 'Bohoddarhut', '10:30 AM', 'Kaptai Rastar Matha', '4:30 PM', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -79,10 +79,10 @@ CREATE TABLE `locations` (
 --
 
 INSERT INTO `locations` (`id`, `name`) VALUES
-(1, 'Dhaka'),
-(2, 'Naogaon'),
-(3, 'Chittagong'),
-(4, 'Rajshahi');
+(1, 'Kaptai Rastar Matha'),
+(2, 'Raogaon'),
+(3, 'Pahartoli'),
+(4, 'CUET');
 
 -- --------------------------------------------------------
 
@@ -118,12 +118,12 @@ CREATE TABLE `tickets` (
 --
 
 INSERT INTO `tickets` (`id`, `passenger_id`, `bus_id`, `jdate`, `seats`, `fare`) VALUES
-(9, 2, 2, '04/08/2019', 'a:2:{i:0;s:2:\"D1\";i:1;s:2:\"D2\";}', 1050),
-(11, 2, 2, '05/08/2019', 'a:1:{i:0;s:2:\"E1\";}', 1050),
-(24, 2, 2, '06/08/2019', 'a:2:{i:0;s:2:\"D3\";i:1;s:2:\"D4\";}', 550),
-(25, 2, 2, '06/08/2019', 'a:1:{i:0;s:2:\"E4\";}', 550),
-(26, 5, 2, '06/08/2019', 'a:2:{i:0;s:2:\"C3\";i:1;s:2:\"C4\";}', 1050),
-(27, 2, 2, '07/08/2019', 'a:2:{i:0;s:2:\"E1\";i:1;s:2:\"E2\";}', 1050);
+(9, 2, 2, '04/08/2019', 'a:2:{i:0;s:2:\"D1\";i:1;s:2:\"D2\";}', 0),
+(11, 2, 2, '05/08/2019', 'a:1:{i:0;s:2:\"E1\";}', 0),
+(24, 2, 2, '06/08/2019', 'a:2:{i:0;s:2:\"D3\";i:1;s:2:\"D4\";}', 0),
+(25, 2, 2, '06/08/2019', 'a:1:{i:0;s:2:\"E4\";}', 0),
+(26, 5, 2, '06/08/2019', 'a:2:{i:0;s:2:\"C3\";i:1;s:2:\"C4\";}', 0),
+(27, 2, 2, '07/08/2019', 'a:2:{i:0;s:2:\"E1\";i:1;s:2:\"E2\";}', 0);
 
 -- --------------------------------------------------------
 
@@ -149,10 +149,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `uname`, `name`, `email`, `password`, `gender`, `utype`, `address`, `mobile`) VALUES
 (1, 'admin', 'Admin', '----', 'admin', 'Male', 'Admin', '----', '0'),
-(2, 'deba', 'Debashish Sarker', 'dsarker333@gmail.com', '123456', 'Male', 'Passenger', '', '1000000000'),
-(3, 'oni', 'Onimesh', 'osarker@gmail.com', '123456', 'Male', 'Owner', '', '0000000000'),
-(4, 'hori', 'Habibur Hori', 'habiburaiub@gmail.com', '123456', 'Male', 'Owner', 'Kuril, Dhaka', '1700000000'),
-(5, 'rubel', 'Rubel', 'rubelmhr@gmail.com', '123456', 'Male', 'Passenger', 'Kuril', '1722222222');
+(2, 'arif', 'Arif Sarker', 'arif@student.cuet.ac.bd', '123456', 'Male', 'Passenger', '', '03110000000'),
+(3, 'oni', 'Onimesh', 'osarker@student.cuet.ac.bd', '123456', 'Male', 'Passenger', '', '01230000'),
+(4, 'hori', 'Habiba Hori', 'habiburaiub@student.cuet.ac.bd', '123456', 'Female', 'Passenger', '', '1700000000'),
+(5, 'rubel', 'Rubel', 'rubelmhr@student.cuet.ac.bd', '123456', 'Male', 'Passenger', '', '1722222222');
 
 --
 -- Indexes for dumped tables

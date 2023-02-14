@@ -29,7 +29,7 @@ switch ($_GET['type']) {
 
     case 'email':
         if (!filter_var($_GET['q'], FILTER_VALIDATE_EMAIL))
-            die('<span class="text-danger">Invalid Email</span>');
+            die('<span class="text-danger">pls enter cuet mail</span>');
         if (filter_var($_GET['q'], FILTER_VALIDATE_EMAIL)) {
             for ($ch = 0; $ch < strlen($_GET['q']); $ch++) {
                 if ($_GET['q'][$ch] == '@') {
@@ -44,6 +44,7 @@ switch ($_GET['type']) {
                 }
             }
         }
+
         $conn = initDB();
         $res = $conn->query("select id from users where email='" . $_GET['q'] . "'");
         if ($res->num_rows == 0)
@@ -112,7 +113,7 @@ switch ($_GET['type']) {
             <div class="col-md-6">
             Bus No.: ' . $businfo['bus_no'] . '<br/>
             Journey Date: ' . $date . '<br/>
-            Seat Selected:<span id="seatbook"> ' . (($seatbook == 0) ? '0' : ($seatbook)) . '</span>
+            Seat Selected:<span id="seatbook"> ' . (($seatbook == 0) ? '0' : (($seatbook>=2) ? '2' : '1')) . '</span>
             </div>
             </div>
             </div>
@@ -130,14 +131,9 @@ switch ($_GET['type']) {
             $(".seat[type=checkbox]").click(
                 function() {
                     let sts = $("input[type=checkbox]:checked").length;
-                    if(sts<3)
-                    {
+                   
                        $("#seatbook").html(sts);
-                    }
-                    else
-                    {
-                        $("#seatbook").html("You can not book more than 2 seats");
-                    }
+                    
                     
                 }
             );

@@ -26,7 +26,7 @@ t_admin_sidebar();
 <?php
 require_once 'inc/database.php';
 $conn = initDB();
-$sql = "select * from locations";
+$sql = "select distinct name from locations";
 if (isset($_POST['loc'])) {
 	$sql .= " where (name like '%".$_POST['loc']."%')";
 }

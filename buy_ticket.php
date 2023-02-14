@@ -19,7 +19,7 @@ if (isset($_POST['buy'])) {
     $sql .= $_POST['fare']."')";
 
     if ($conn->query($sql)) {
-      echo '<div class="alert alert-success">Booked <strong>Success</strong>full!<a class="text-right" href="./print.php?ticket='.$conn->insert_id.'"><button class="btn btn-info">Print</button></a></div>';
+      echo '<div class="alert alert-success">Booked <strong>Success</strong>full!</div>';
     }
     else {
       echo '<div class="alert alert-danger"><strong>Error: </strong>'.$conn->error.'</div>';
